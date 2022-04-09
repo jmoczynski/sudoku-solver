@@ -1,3 +1,5 @@
+package SudokuSolver;
+
 public class Cell {
 
     private int val, row, col;
@@ -7,7 +9,7 @@ public class Cell {
      * @param i desired value to check
      * @return true if the desired value is valid, false otherwise
      */
-    public boolean isValidVal(int i){
+    public static boolean isValidVal(int i){
         // TODO: implement method
         return false;
     }
@@ -17,7 +19,7 @@ public class Cell {
      * @param i desired to row check
      * @return true if the desired row is valid, false otherwise
      */
-    public boolean isValidRow(int i){
+    public static boolean isValidRow(int i){
         // TODO: implement method
         return false;
     }
@@ -27,13 +29,13 @@ public class Cell {
      * @param i desired column to check
      * @return true if the desired column is valid, false otherwise
      */
-    public boolean isValidCol(int i){
+    public static boolean isValidCol(int i){
         // TODO: implement method
         return false;
     }
 
     /**
-     * constructor for Cell object
+     * constructor for SudokuSolver.Cell object
      * @param v cell value
      * @param r cell row
      * @param c cell column
