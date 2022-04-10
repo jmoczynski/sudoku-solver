@@ -1,15 +1,12 @@
 package SudokuSolver;
 
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
 
-import SudokuSolver.Cell;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class CellTests {
 
-    /**
-     * isValidVal method tests
-     */
+    // isValidVal method tests
     @Test
     void isValidValTests(){
         // these should return false: i < 1 or i > 9 for int i;
@@ -28,9 +25,7 @@ public class CellTests {
         assertTrue(Cell.isValidVal(9));
     }
 
-    /**
-     * isValidRow method tests
-     */
+    // isValidRow method tests
     @Test
     void isValidRowTests(){
         // these should return false: i < 1 or i > 9 for int i;
@@ -48,9 +43,7 @@ public class CellTests {
         assertTrue(Cell.isValidRow(8));
         assertTrue(Cell.isValidRow(9));    }
 
-    /**
-     * isValidCol method tests
-     */
+    // isValidCol method tests
     @Test
     void isValidColTests(){
         // these should return false: i < 1 or i > 9 for int i;
@@ -70,9 +63,7 @@ public class CellTests {
     }
 
     @Test
-    /**
-     * constructor, accessor, and mutator methods tests
-     */
+    // constructor, accessor, and mutator methods tests
     void constructorTests(){
         int[] s1, s2;
         s1 = new int[]{-100, -1, 0, 10, 11, 100};
