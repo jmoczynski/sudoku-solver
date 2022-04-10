@@ -2,6 +2,8 @@ package SudokuSolver;
 
 import org.junit.jupiter.api.Test;
 
+import java.util.Arrays;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 public class PuzzleTests {
@@ -19,9 +21,9 @@ public class PuzzleTests {
         assertFalse(Puzzle.isValidBoxArray(b1));
         assertFalse(Puzzle.isValidBoxArray(b2));
         assertFalse(Puzzle.isValidBoxArray(b3));
-        assertFalse(Puzzle.isValidBoxArray(b4));
+        assertFalse(Puzzle.isValidBoxArray(b5));
         assertFalse(Puzzle.isValidBoxArray(b6));
-        assertTrue(Puzzle.isValidBoxArray(b4));
+        assertFalse(Puzzle.isValidBoxArray(b4));
 
         Cell[] cells1, cells2, cells3, cells4, cells5, cells6, cells7, cells8, cells9;
         cells1 = new Cell[]{
@@ -80,15 +82,15 @@ public class PuzzleTests {
                 new Cell(0,6,9)
         };
         cells6 = new Cell[]{
-                new Cell(0,4,1),
-                new Cell(0,4,2),
-                new Cell(0,4,3),
-                new Cell(0,5,1),
-                new Cell(0,5,2),
-                new Cell(0,5,3),
-                new Cell(0,6,1),
-                new Cell(0,6,2),
-                new Cell(0,6,3)
+                new Cell(0,4,4),
+                new Cell(0,4,5),
+                new Cell(0,4,6),
+                new Cell(0,5,4),
+                new Cell(0,5,5),
+                new Cell(0,5,6),
+                new Cell(0,6,4),
+                new Cell(0,6,5),
+                new Cell(0,6,6)
         };
         cells7 = new Cell[]{
                 new Cell(0,7,4),
@@ -133,8 +135,11 @@ public class PuzzleTests {
         bc7 = new Box(cells7);
         bc8 = new Box(cells8);
         bc9 = new Box(cells9);
-        assertFalse(Puzzle.isValidBoxArray(new Box[]{bc1, bc2, bc3, bc4, bc5, bc6, bc7, bc8, bc8}));
-        assertTrue(Puzzle.isValidBoxArray(new Box[]{bc1, bc2, bc3, bc4, bc5, bc6, bc7, bc8, bc9}));
+        Box[] ta1, ta2;
+        ta1 = new Box[]{bc1, bc2, bc3, bc4, bc5, bc6, bc7, bc8, bc8};
+        assertFalse(Puzzle.isValidBoxArray(ta1));
+        ta2 = new Box[]{bc1, bc2, bc3, bc4, bc5, bc6, bc7, bc8, bc9};
+        assertTrue(Puzzle.isValidBoxArray(ta2));
 
     }
 
