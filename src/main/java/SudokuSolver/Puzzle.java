@@ -52,6 +52,7 @@ public class Puzzle {
      */
     public Puzzle(Box[] boxes){
         // TODO: implement
+        this.setBoxes(boxes);
     }
 
     /**
@@ -60,7 +61,7 @@ public class Puzzle {
      */
     public Box[] getBoxes(){
         // TODO: implement
-        return null;
+        return this.boxes;
     }
 
     public Box getBox(int num){
@@ -84,6 +85,8 @@ public class Puzzle {
      */
     private void setBoxes(Box[] boxes){
         // TODO: implement
+        if(!isValidBoxArray(boxes)) throw new IllegalArgumentException("Box array invalid");
+        this.boxes = boxes;
     }
 
 }
