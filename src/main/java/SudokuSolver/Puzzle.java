@@ -129,6 +129,30 @@ public class Puzzle {
         throw new NullPointerException("error");
     }
 
+    /**
+     * get column of values from Puzzle
+     * @param num desired column
+     * @throws IllegalArgumentException if desired column < 1 or > 9
+     * @throws NullPointerException if column not found in Puzzle
+     * @return array of Cells in Puzzle column
+     */
+    public Cell[] getCol(int num){
+        // TODO: implement
+        return null;
+    }
+
+    /**
+     * get row of values from Puzzle
+     * @param num desired row
+     * @throws IllegalArgumentException if desired row < 1 or > 9
+     * @throws NullPointerException if row not found in Puzzle
+     * @return array of Cells in Puzzle row
+     */
+    public Cell[] getRow(int num){
+        // TODO: implement
+        return null;
+    }
+
     public Cell getCell(int r, int c){
         // TODO: implement
         return null;
