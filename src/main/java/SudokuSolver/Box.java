@@ -48,7 +48,8 @@ public class Box {
      * @throws IllegalArgumentException if Cell array not valid
      */
     public Box(Cell[] c){
-        // TODO: implement method
+        this.setCells(c);
+        this.checkComplete();
     }
 
     /**
@@ -56,8 +57,7 @@ public class Box {
      * @return Cell array
      */
     public Cell[] getCells() {
-        // TODO: implement method
-        return null;
+        return this.cells;
     }
 
     /**
@@ -73,12 +73,21 @@ public class Box {
     }
 
     /**
+     * private mutator method for Cell array
+     * @param c desired Cell array
+     * @throws IllegalArgumentException if desired Cell array is not valid
+     */
+    private void setCells(Cell[] c){
+        if(!isValidCellArray(c)) throw new IllegalArgumentException("Cell array not valid");
+        this.cells = c;
+    }
+
+    /**
      * accessor for if Box is complete
      * @return whether Box is complete or not
      */
     boolean getComplete(){
-        // TODO: implement method
-        return false;
+        return this.isComplete;
     }
 
     /**
@@ -97,7 +106,7 @@ public class Box {
      * @param complete whether Box is complete or not
      */
     private void setComplete(boolean complete){
-        // TODO: implement method
+        this.isComplete = complete;
     }
 
     /**
@@ -106,7 +115,13 @@ public class Box {
      * @return Box complete property
      */
     public boolean checkComplete(){
-        // TODO: implement method
-        return false;
+        final int COMPLETE_SIZE = 9;
+        Set<Integer> valSet = new HashSet<>();
+        Iterator<Cell> cellIter = Arrays.stream(this.cells).iterator();
+        while(cellIter.hasNext()) valSet.add(cellIter.next().getVal());
+        if(valSet.size() != COMPLETE_SIZE) {
+            this.setComplete(false);
+        }else this.setComplete(true);
+        return this.getComplete();
     }
 }

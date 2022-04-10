@@ -133,7 +133,6 @@ public class BoxTests {
     @Test
     // checkComplete method tests
     void checkCompleteTests(){
-        // TODO: implement tests
         Cell[] a1 = new Cell[]{
                 new Cell(1, 1, 1),
                 new Cell(1, 1, 2),
