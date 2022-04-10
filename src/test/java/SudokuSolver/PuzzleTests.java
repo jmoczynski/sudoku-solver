@@ -389,7 +389,6 @@ public class PuzzleTests {
     @Test
     // getColVals method tests
     void getColValsTests(){
-        // TODO: implement
         Cell[] cells1, cells2, cells3, cells4, cells5, cells6, cells7, cells8, cells9;
         cells1 = new Cell[]{
                 new Cell(0,1,1),
@@ -515,7 +514,6 @@ public class PuzzleTests {
     @Test
     // getRowVals method tests
     void getRowValsTests(){
-        // TODO: implement
         Cell[] cells1, cells2, cells3, cells4, cells5, cells6, cells7, cells8, cells9;
         cells1 = new Cell[]{
                 new Cell(0,1,1),
