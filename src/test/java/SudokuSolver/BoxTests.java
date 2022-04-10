@@ -64,7 +64,6 @@ public class BoxTests {
     @Test
     // constructor, accessor, and mutator method tests
     void constructorTests(){
-        // TODO: implement tests
         Cell[] a1, a2, a3, a4, a5, a6, a7, a8;
         a1 = new Cell[]{};
         assertThrows(IllegalArgumentException.class, ()-> new Box(a1));
