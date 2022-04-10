@@ -64,12 +64,20 @@ public class Box {
      * accessor for specific Cell in Box
      * @param r row of Cell
      * @param c column of Cell
-     * @return
-     * @throws IllegalArgumentException if not valid row or column
+     * @return desired Cell in Box
+     * @throws IllegalArgumentException if row or column is invalid
+     * @throws NullPointerException if no Cell in desired row or column
      */
     public Cell getCell(int r, int c){
         // TODO: implement method
-        return null;
+        if(!Cell.isValidRow(r) || !Cell.isValidCol(c)) throw new IllegalArgumentException("invalid row or column");
+        Iterator<Cell> cellIter = Arrays.asList(this.getCells()).iterator();
+        Cell cell;
+        while(cellIter.hasNext()){
+            cell = cellIter.next();
+            if(cell.getRow() == r && cell.getCol() == c) return cell;
+        }
+        throw new NullPointerException("cell not found");
     }
 
     /**
