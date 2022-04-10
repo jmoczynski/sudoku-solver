@@ -91,6 +91,17 @@ public class Box {
     }
 
     /**
+     * mutator for specific Cell
+     * @param r Cell row
+     * @param c Cell col
+     * @param v Cell desired value
+     * @throws IllegalArgumentException if desired value is invalid
+     */
+    public void setCell(int r, int c, int v){
+        // TODO: implement method
+    }
+
+    /**
      * mutates complete property of Box
      * @param complete whether Box is complete or not
      */
