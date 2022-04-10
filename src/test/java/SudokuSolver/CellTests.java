@@ -113,7 +113,6 @@ public class CellTests {
         // mutator tests
         assertThrows(IllegalArgumentException.class, ()-> c1.setVal(s1[0]));
         assertThrows(IllegalArgumentException.class, ()-> c1.setVal(s1[1]));
-        assertThrows(IllegalArgumentException.class, ()-> c1.setVal(s1[2]));
         assertThrows(IllegalArgumentException.class, ()-> c1.setVal(s1[3]));
         assertThrows(IllegalArgumentException.class, ()-> c1.setVal(s1[4]));
         assertThrows(IllegalArgumentException.class, ()-> c1.setVal(s1[5]));
