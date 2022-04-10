@@ -74,8 +74,70 @@ public class CellTests {
      * constructor, accessor, and mutator methods tests
      */
     void constructorTests(){
-        // TODO: implement tests
-        assertTrue(false);
+        int[] s1, s2;
+        s1 = new int[]{-100, -1, 0, 10, 11, 100};
+        s2 = new int[]{1, 2, 5, 8, 9};
+
+        // constructor tests
+        assertThrows(IllegalArgumentException.class, ()-> new Cell(s1[0],s2[0],s2[0]));
+        assertThrows(IllegalArgumentException.class, ()-> new Cell(s1[1],s2[0],s2[1]));
+        assertThrows(IllegalArgumentException.class, ()-> new Cell(s1[2],s2[0],s2[2]));
+        assertThrows(IllegalArgumentException.class, ()-> new Cell(s1[3],s2[1],s2[3]));
+        assertThrows(IllegalArgumentException.class, ()-> new Cell(s1[4],s2[1],s2[4]));
+        assertThrows(IllegalArgumentException.class, ()-> new Cell(s1[5],s2[1],s2[5]));
+        assertThrows(IllegalArgumentException.class, ()-> new Cell(s2[0],s1[0],s2[0]));
+        assertThrows(IllegalArgumentException.class, ()-> new Cell(s2[1],s1[1],s2[0]));
+        assertThrows(IllegalArgumentException.class, ()-> new Cell(s2[2],s1[2],s2[0]));
+        assertThrows(IllegalArgumentException.class, ()-> new Cell(s2[3],s1[3],s2[1]));
+        assertThrows(IllegalArgumentException.class, ()-> new Cell(s2[4],s1[4],s2[1]));
+        assertThrows(IllegalArgumentException.class, ()-> new Cell(s2[5],s1[5],s2[1]));
+        assertThrows(IllegalArgumentException.class, ()-> new Cell(s2[0],s2[0],s1[0]));
+        assertThrows(IllegalArgumentException.class, ()-> new Cell(s2[0],s2[1],s1[1]));
+        assertThrows(IllegalArgumentException.class, ()-> new Cell(s2[0],s2[2],s1[2]));
+        assertThrows(IllegalArgumentException.class, ()-> new Cell(s2[1],s2[3],s1[3]));
+        assertThrows(IllegalArgumentException.class, ()-> new Cell(s2[1],s2[4],s1[4]));
+        assertThrows(IllegalArgumentException.class, ()-> new Cell(s2[1],s2[5],s1[5]));
+
+        Cell c1, c2, c3;
+        c1 = new Cell(1, 1, 1);
+        assertNotNull(c1);
+        c2 = new Cell(2, 5, 8);
+        assertNotNull(c2);
+        c3 = new Cell(9,5,1);
+        assertNotNull(c3);
+
+        // accessor tests
+        assertEquals(1, c1.getVal());
+        assertEquals(1, c1.getRow());
+        assertEquals(1, c1.getCol());
+        assertEquals(2, c2.getVal());
+        assertEquals(5, c2.getRow());
+        assertEquals(8, c2.getCol());
+        assertEquals(9, c3.getVal());
+        assertEquals(5, c3.getRow());
+        assertEquals(1, c3.getCol());
+        assertEquals(c1.getCol(), c3.getCol());
+        assertEquals(c2.getRow(), c3.getRow());
+
+        // mutator tests
+        assertThrows(IllegalArgumentException.class, ()-> c1.setVal(s1[0]));
+        assertThrows(IllegalArgumentException.class, ()-> c1.setVal(s1[1]));
+        assertThrows(IllegalArgumentException.class, ()-> c1.setVal(s1[2]));
+        assertThrows(IllegalArgumentException.class, ()-> c1.setVal(s1[3]));
+        assertThrows(IllegalArgumentException.class, ()-> c1.setVal(s1[4]));
+        assertThrows(IllegalArgumentException.class, ()-> c1.setVal(s1[5]));
+        assertThrows(IllegalArgumentException.class, ()-> c1.setRow(s1[0]));
+        assertThrows(IllegalArgumentException.class, ()-> c1.setRow(s1[1]));
+        assertThrows(IllegalArgumentException.class, ()-> c1.setRow(s1[2]));
+        assertThrows(IllegalArgumentException.class, ()-> c1.setRow(s1[3]));
+        assertThrows(IllegalArgumentException.class, ()-> c1.setRow(s1[4]));
+        assertThrows(IllegalArgumentException.class, ()-> c1.setRow(s1[5]));
+        assertThrows(IllegalArgumentException.class, ()-> c1.setCol(s1[0]));
+        assertThrows(IllegalArgumentException.class, ()-> c1.setCol(s1[1]));
+        assertThrows(IllegalArgumentException.class, ()-> c1.setCol(s1[2]));
+        assertThrows(IllegalArgumentException.class, ()-> c1.setCol(s1[3]));
+        assertThrows(IllegalArgumentException.class, ()-> c1.setCol(s1[4]));
+        assertThrows(IllegalArgumentException.class, ()-> c1.setCol(s1[5]));
     }
 
 }
