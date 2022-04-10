@@ -39,7 +39,9 @@ public class Cell {
      * @throws IllegalArgumentException if at least 1 of these is invalid: v, r, c
      */
     public Cell(int v, int r, int c){
-        // TODO: implement constructor
+        this.setVal(v);
+        this.setRow(c);
+        this.setCol(c);
     }
 
     /**
