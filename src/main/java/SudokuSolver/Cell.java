@@ -10,8 +10,7 @@ public class Cell {
      * @return true if the desired value is valid, false otherwise
      */
     public static boolean isValidVal(int i){
-        // TODO: implement method
-        return false;
+        return i > 0 && i < 10;
     }
 
     /**
