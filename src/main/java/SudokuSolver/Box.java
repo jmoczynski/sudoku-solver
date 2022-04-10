@@ -1,5 +1,7 @@
 package SudokuSolver;
 
+import java.util.*;
+
 public class Box {
 
     private Cell[] cells;
@@ -16,8 +18,28 @@ public class Box {
      * @return true if all checks are true, false otherwise
      */
     public static boolean isValidCellArray(Cell[] c){
-        // TODO: implement method
-        return false;
+        final int EXPECTED_LENGTH = 9, EXPECTED_DISTINCT = 3, EXPECTED_COUNT = 3;
+        if(c.length != EXPECTED_LENGTH) return false;
+        int[] rows = new int[c.length], cols = new int[c.length];
+        if(rows.length != EXPECTED_LENGTH || cols.length != EXPECTED_LENGTH) return false;
+        for(int i = 0; i < EXPECTED_LENGTH; i++){
+            rows[i] = c[i].getRow();
+            cols[i] = c[i].getCol();
+        }
+        Map<Integer, Integer> rowMap = new HashMap<>(), colMap = new HashMap<>();
+        Iterator<Integer> rowIter = Arrays.stream(rows).iterator(), colIter = Arrays.stream(cols).iterator();
+        int r1, c1;
+        while(rowIter.hasNext() || colIter.hasNext()){
+            r1 = rowIter.next();
+            c1 = colIter.next();
+            rowMap.putIfAbsent(r1, 0);
+            rowMap.replace(r1, rowMap.get(r1) + 1);
+            colMap.putIfAbsent(c1, 0);
+            colMap.replace(c1, colMap.get(c1) + 1);
+        }
+        if(rowMap.size() != EXPECTED_DISTINCT || colMap.size() != EXPECTED_DISTINCT) return false;
+        if(rowMap.values().size() != EXPECTED_COUNT || colMap.values().size() != EXPECTED_COUNT) return false;
+        return true;
     }
 
     /**
