@@ -152,8 +152,39 @@ public class BoxTests {
     @Test
     // setCell method tests
     void setCellTests(){
-        // TODO: implement tests
-        assertTrue(false);
+        Cell[] a1 = new Cell[]{
+                new Cell(1, 1, 1),
+                new Cell(2, 1, 2),
+                new Cell(3, 1, 3),
+                new Cell(4, 2, 1),
+                new Cell(5, 2, 2),
+                new Cell(6, 2, 3),
+                new Cell(7, 3, 1),
+                new Cell(8, 3, 2),
+                new Cell(9, 3, 3)
+        };
+        Box b1 = new Box(a1);
+        assertThrows(NullPointerException.class, ()-> b1.setCell(4,1,8));
+        assertThrows(IllegalArgumentException.class, ()-> b1.setCell(10,1,3));
+        assertThrows(IllegalArgumentException.class, ()-> b1.setCell(10,1,3));
+        b1.setCell(1, 1, 9);
+        assertEquals(9, b1.getCell(1,1));
+        b1.setCell(2, 1, 8);
+        assertEquals(8, b1.getCell(1,2));
+        b1.setCell(3, 1, 7);
+        assertEquals(7, b1.getCell(1,3));
+        b1.setCell(4, 2, 6);
+        assertEquals(6, b1.getCell(2,1));
+        b1.setCell(5, 2, 5);
+        assertEquals(5, b1.getCell(2,2));
+        b1.setCell(6, 2, 4);
+        assertEquals(4, b1.getCell(2,3));
+        b1.setCell(7, 3, 3);
+        assertEquals(3, b1.getCell(3,1));
+        b1.setCell(8, 3, 2);
+        assertEquals(2, b1.getCell(3,2));
+        b1.setCell(9, 3, 1);
+        assertEquals(1, b1.getCell(3,3));
     }
 
     @Test

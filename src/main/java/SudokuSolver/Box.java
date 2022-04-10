@@ -102,7 +102,8 @@ public class Box {
      * @param r Cell row
      * @param c Cell col
      * @param v Cell desired value
-     * @throws IllegalArgumentException if desired value is invalid
+     * @throws IllegalArgumentException if desired value is invalid or cell row or column is invalid
+     * @throws NullPointerException if the desired row or column do not exist in Box
      */
     public void setCell(int r, int c, int v){
         // TODO: implement method
