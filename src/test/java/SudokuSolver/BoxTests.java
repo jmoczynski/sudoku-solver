@@ -120,7 +120,34 @@ public class BoxTests {
     // getCell method tests
     void getCellTests(){
         // TODO: implement tests
-        assertTrue(false);
+        Cell[] a1 = new Cell[]{
+                new Cell(1, 1, 1),
+                new Cell(2, 1, 2),
+                new Cell(3, 1, 3),
+                new Cell(4, 2, 1),
+                new Cell(5, 2, 2),
+                new Cell(6, 2, 3),
+                new Cell(7, 3, 1),
+                new Cell(8, 3, 2),
+                new Cell(9, 3, 3)
+        };
+        Box b1 = new Box(a1);
+        assertThrows(NullPointerException.class, ()-> b1.getCell(-10, -10));
+        assertThrows(NullPointerException.class, ()-> b1.getCell(0, 0));
+        assertThrows(NullPointerException.class, ()-> b1.getCell(1, 0));
+        assertThrows(NullPointerException.class, ()-> b1.getCell(0, 1));
+        assertThrows(NullPointerException.class, ()-> b1.getCell(4,1));
+        assertThrows(NullPointerException.class, ()-> b1.getCell(2,4));
+        assertThrows(NullPointerException.class, ()-> b1.getCell(10,10));
+        assertEquals(a1[0].getVal(), b1.getCell(1,1).getVal());
+        assertEquals(a1[1].getVal(), b1.getCell(1,2).getVal());
+        assertEquals(a1[2].getVal(), b1.getCell(1,3).getVal());
+        assertEquals(a1[3].getVal(), b1.getCell(2,1).getVal());
+        assertEquals(a1[4].getVal(), b1.getCell(2,2).getVal());
+        assertEquals(a1[5].getVal(), b1.getCell(2,3).getVal());
+        assertEquals(a1[6].getVal(), b1.getCell(3,1).getVal());
+        assertEquals(a1[7].getVal(), b1.getCell(3,2).getVal());
+        assertEquals(a1[8].getVal(), b1.getCell(3,3).getVal());
     }
 
     @Test
