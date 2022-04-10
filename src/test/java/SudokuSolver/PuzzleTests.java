@@ -387,4 +387,18 @@ public class PuzzleTests {
         assertEquals(bc8, p1.getBox(9));
         assertEquals(bc9, p1.getBox(7));
     }
+
+    @Test
+    // getCol method tests
+    void getColTests(){
+        // TODO: implement
+        fail();
+    }
+
+    @Test
+    // getRow method tests
+    void getRowTests(){
+        // TODO: implement
+        fail();
+    }
 }
