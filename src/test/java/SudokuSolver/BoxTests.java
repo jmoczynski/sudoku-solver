@@ -76,6 +76,13 @@ public class BoxTests {
     }
 
     @Test
+    // setCell method tests
+    void setCellTests(){
+        // TODO: implement tests
+        assertTrue(false);
+    }
+
+    @Test
     // checkComplete method tests
     void checkCompleteTests(){
         // TODO: implement tests
