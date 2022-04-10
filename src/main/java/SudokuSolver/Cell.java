@@ -19,8 +19,7 @@ public class Cell {
      * @return true if the desired row is valid, false otherwise
      */
     public static boolean isValidRow(int i){
-        // TODO: implement method
-        return false;
+        return i > 0 && i < 10;
     }
 
     /**
