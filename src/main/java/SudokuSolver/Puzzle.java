@@ -45,10 +45,19 @@ public class Puzzle {
         return true;
     }
 
+    /**
+     * constructor method for Puzzle
+     * @param boxes desired Box array to make Puzzle
+     * @throws IllegalArgumentException if Box array invalid
+     */
     public Puzzle(Box[] boxes){
         // TODO: implement
     }
 
+    /**
+     * accessor method for Puzzle boxes
+     * @return Box array of Puzzle boxes
+     */
     public Box[] getBoxes(){
         // TODO: implement
         return null;
@@ -65,6 +74,15 @@ public class Puzzle {
     }
 
     public void setCell(int r, int c, int v){
+        // TODO: implement
+    }
+
+    /**
+     * mutator method for the Box array of the Puzzle
+     * @param boxes the desired Box array
+     * @throws IllegalArgumentException if the Box array is invalid
+     */
+    private void setBoxes(Box[] boxes){
         // TODO: implement
     }
 

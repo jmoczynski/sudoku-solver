@@ -203,15 +203,15 @@ public class PuzzleTests {
                 new Cell(0,6,9)
         };
         cells6 = new Cell[]{
-                new Cell(0,4,1),
-                new Cell(0,4,2),
-                new Cell(0,4,3),
-                new Cell(0,5,1),
-                new Cell(0,5,2),
-                new Cell(0,5,3),
-                new Cell(0,6,1),
-                new Cell(0,6,2),
-                new Cell(0,6,3)
+                new Cell(0,4,4),
+                new Cell(0,4,5),
+                new Cell(0,4,6),
+                new Cell(0,5,4),
+                new Cell(0,5,5),
+                new Cell(0,5,6),
+                new Cell(0,6,4),
+                new Cell(0,6,5),
+                new Cell(0,6,6)
         };
         cells7 = new Cell[]{
                 new Cell(0,7,4),
