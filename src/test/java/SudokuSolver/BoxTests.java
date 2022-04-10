@@ -24,19 +24,19 @@ public class BoxTests {
         assertFalse(Box.isValidCellArray(a4));
         a5 = new Cell[100];
         assertFalse(Box.isValidCellArray(a5));
-        a6 = (Cell[]) Arrays.asList(
-                new Cell(1,1,1),
-                new Cell(2,2,1),
-                new Cell(3,3,1),
-                new Cell(4,4,2),
-                new Cell(5,5,2),
-                new Cell(6,6,2),
-                new Cell(7,7,3),
-                new Cell(8,8,3),
-                new Cell(9,9,3)
-        ).toArray();
+        a6 = new Cell[]{
+                new Cell(1, 1, 1),
+                new Cell(2, 2, 1),
+                new Cell(3, 3, 1),
+                new Cell(4, 4, 2),
+                new Cell(5, 5, 2),
+                new Cell(6, 6, 2),
+                new Cell(7, 7, 3),
+                new Cell(8, 8, 3),
+                new Cell(9, 9, 3)
+        };
         assertFalse(Box.isValidCellArray(a6));
-        a7 = (Cell[]) Arrays.asList(
+        a7 = new Cell[]{
                 new Cell(1,1,1),
                 new Cell(2,1,2),
                 new Cell(3,1,3),
@@ -46,19 +46,19 @@ public class BoxTests {
                 new Cell(7,3,7),
                 new Cell(8,3,8),
                 new Cell(9,3,9)
-        ).toArray();
+        };
         assertFalse(Box.isValidCellArray(a7));
-        a8 = (Cell[]) Arrays.asList(
-                new Cell(1,1,1),
-                new Cell(1,1,2),
-                new Cell(1,1,3),
-                new Cell(1,2,1),
-                new Cell(1,2,2),
-                new Cell(1,2,3),
-                new Cell(1,3,1),
-                new Cell(1,3,2),
-                new Cell(1,3,3)
-        ).toArray();
+        a8 = new Cell[]{
+                new Cell(1, 1, 1),
+                new Cell(1, 1, 2),
+                new Cell(1, 1, 3),
+                new Cell(1, 2, 1),
+                new Cell(1, 2, 2),
+                new Cell(1, 2, 3),
+                new Cell(1, 3, 1),
+                new Cell(1, 3, 2),
+                new Cell(1, 3, 3)
+        };
         assertTrue(Box.isValidCellArray(a8));
     }
 
