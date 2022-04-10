@@ -82,15 +82,6 @@ public class Box {
     }
 
     /**
-     * mutator for Cell array
-     * @param c desired Cell array
-     * @throws IllegalArgumentException if the Cell array is not valid
-     */
-    public void setCells(Cell[] c) {
-        // TODO: implement method
-    }
-
-    /**
      * mutator for specific Cell
      * @param r Cell row
      * @param c Cell col
