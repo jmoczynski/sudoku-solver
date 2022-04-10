@@ -65,7 +65,53 @@ public class BoxTests {
     // constructor, accessor, and mutator method tests
     void constructorTests(){
         // TODO: implement tests
-        assertTrue(false);
+        Cell[] a1, a2, a3, a4, a5, a6, a7, a8;
+        a1 = new Cell[]{};
+        assertThrows(IllegalArgumentException.class, ()-> new Box(a1));
+        a2 = new Cell[1];
+        assertThrows(IllegalArgumentException.class, ()-> new Box(a2));
+        a3 = new Cell[8];
+        assertThrows(IllegalArgumentException.class, ()-> new Box(a3));
+        a4 = new Cell[10];
+        assertThrows(IllegalArgumentException.class, ()-> new Box(a4));
+        a5 = new Cell[100];
+        assertThrows(IllegalArgumentException.class, ()-> new Box(a5));
+        a6 = new Cell[]{
+                new Cell(1, 1, 1),
+                new Cell(2, 2, 1),
+                new Cell(3, 3, 1),
+                new Cell(4, 4, 2),
+                new Cell(5, 5, 2),
+                new Cell(6, 6, 2),
+                new Cell(7, 7, 3),
+                new Cell(8, 8, 3),
+                new Cell(9, 9, 3)
+        };
+        assertThrows(IllegalArgumentException.class, ()-> new Box(a6));
+        a7 = new Cell[]{
+                new Cell(1,1,1),
+                new Cell(2,1,2),
+                new Cell(3,1,3),
+                new Cell(4,2,4),
+                new Cell(5,2,5),
+                new Cell(6,2,6),
+                new Cell(7,3,7),
+                new Cell(8,3,8),
+                new Cell(9,3,9)
+        };
+        assertThrows(IllegalArgumentException.class, ()-> new Box(a7));
+        a8 = new Cell[]{
+                new Cell(1, 1, 1),
+                new Cell(1, 1, 2),
+                new Cell(1, 1, 3),
+                new Cell(1, 2, 1),
+                new Cell(1, 2, 2),
+                new Cell(1, 2, 3),
+                new Cell(1, 3, 1),
+                new Cell(1, 3, 2),
+                new Cell(1, 3, 3)
+        };
+        Box b = new Box(a8);
     }
 
     @Test
