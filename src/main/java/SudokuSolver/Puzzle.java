@@ -81,6 +81,47 @@ public class Puzzle {
      */
     public Box getBox(int num){
         // TODO: implement
+        if(num < 1 || num > 9) throw new IllegalArgumentException("invalid Box number");
+        int[] rowSearch = new int[3], colSearch = new int[3];
+        switch(num){
+            case 1:
+                rowSearch = new int[]{1,2,3};
+                colSearch = new int[]{1,2,3};
+                break;
+            case 2:
+                rowSearch = new int[]{1,2,3};
+                colSearch = new int[]{4,5,6};
+                break;
+            case 3:
+                rowSearch = new int[]{1,2,3};
+                colSearch = new int[]{7,8,9};
+                break;
+            case 4:
+                rowSearch = new int[]{4,5,6};
+                colSearch = new int[]{1,2,3};
+                break;
+            case 5:
+                rowSearch = new int[]{4,5,6};
+                colSearch = new int[]{4,5,6};
+                break;
+            case 6:
+                rowSearch = new int[]{4,5,6};
+                colSearch = new int[]{7,8,9};
+                break;
+            case 7:
+                rowSearch = new int[]{7,8,9};
+                colSearch = new int[]{1,2,3};
+                break;
+            case 8:
+                rowSearch = new int[]{7,8,9};
+                colSearch = new int[]{4,5,6};
+                break;
+            case 9:
+                rowSearch = new int[]{7,8,9};
+                colSearch = new int[]{7,8,9};
+                break;
+        }
+
         return null;
     }
 
