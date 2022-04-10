@@ -64,6 +64,21 @@ public class Puzzle {
         return this.boxes;
     }
 
+    /**
+     * accessor method for specific Puzzle box:
+     * - box 1: rows 1,2,3 intersect cols 1,2,3
+     * - box 2: rows 1,2,3 intersect cols 4,5,6
+     * - box 3: rows 1,2,3 intersect cols 7,8,9
+     * - box 4: rows 4,5,6 intersect cols 1,2,3
+     * - box 5: rows 4,5,6 intersect cols 4,5,6
+     * - box 6: rows 4,5,6 intersect cols 7,8,9
+     * - box 7: rows 7,8,9 intersect cols 1,2,3
+     * - box 8: rows 7,8,9 intersect cols 4,5,6
+     * - box 9: rows 7,8,9 intersect cols 7,8,9
+     * @param num the number of the Box to get
+     * @return the Box corresponding to the number
+     * @throws IllegalArgumentException if num not > 0 or < 10
+     */
     public Box getBox(int num){
         // TODO: implement
         return null;
