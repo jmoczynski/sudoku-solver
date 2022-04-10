@@ -69,7 +69,6 @@ public class Box {
      * @throws NullPointerException if no Cell in desired row or column
      */
     public Cell getCell(int r, int c){
-        // TODO: implement method
         if(!Cell.isValidRow(r) || !Cell.isValidCol(c)) throw new IllegalArgumentException("invalid row or column");
         Iterator<Cell> cellIter = Arrays.asList(this.getCells()).iterator();
         Cell cell;
