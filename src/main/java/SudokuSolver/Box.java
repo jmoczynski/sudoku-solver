@@ -133,4 +133,24 @@ public class Box {
         }else this.setComplete(true);
         return this.getComplete();
     }
+
+    /**
+     * Get the Box column numbers
+     * @return the numbers of the columns in the Box
+     */
+    public int[] getColNums(){
+        // TODO: implement
+        return null;
+    }
+
+    /**
+     * Get the Box row numbers
+     * @return the numbers of the columns in the Box
+     */
+    public int[] getRowNums(){
+        // TODO: implement
+        return null;
+    }
+
+
 }
