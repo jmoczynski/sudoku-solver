@@ -106,7 +106,8 @@ public class Box {
      * @throws NullPointerException if the desired row or column do not exist in Box
      */
     public void setCell(int r, int c, int v){
-        // TODO: implement method
+        Cell cell = this.getCell(r, c);
+        cell.setVal(v);
     }
 
     /**

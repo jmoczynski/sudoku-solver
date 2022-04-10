@@ -168,23 +168,23 @@ public class BoxTests {
         assertThrows(IllegalArgumentException.class, ()-> b1.setCell(10,1,3));
         assertThrows(IllegalArgumentException.class, ()-> b1.setCell(10,1,3));
         b1.setCell(1, 1, 9);
-        assertEquals(9, b1.getCell(1,1));
-        b1.setCell(2, 1, 8);
-        assertEquals(8, b1.getCell(1,2));
-        b1.setCell(3, 1, 7);
-        assertEquals(7, b1.getCell(1,3));
-        b1.setCell(4, 2, 6);
-        assertEquals(6, b1.getCell(2,1));
-        b1.setCell(5, 2, 5);
-        assertEquals(5, b1.getCell(2,2));
-        b1.setCell(6, 2, 4);
-        assertEquals(4, b1.getCell(2,3));
-        b1.setCell(7, 3, 3);
-        assertEquals(3, b1.getCell(3,1));
-        b1.setCell(8, 3, 2);
-        assertEquals(2, b1.getCell(3,2));
-        b1.setCell(9, 3, 1);
-        assertEquals(1, b1.getCell(3,3));
+        assertEquals(9, b1.getCell(1,1).getVal());
+        b1.setCell(1, 2, 8);
+        assertEquals(8, b1.getCell(1,2).getVal());
+        b1.setCell(1, 3, 7);
+        assertEquals(7, b1.getCell(1,3).getVal());
+        b1.setCell(2, 1, 6);
+        assertEquals(6, b1.getCell(2,1).getVal());
+        b1.setCell(2, 2, 5);
+        assertEquals(5, b1.getCell(2,2).getVal());
+        b1.setCell(2, 3, 4);
+        assertEquals(4, b1.getCell(2,3).getVal());
+        b1.setCell(3, 1, 3);
+        assertEquals(3, b1.getCell(3,1).getVal());
+        b1.setCell(3, 2, 2);
+        assertEquals(2, b1.getCell(3,2).getVal());
+        b1.setCell(3, 3, 1);
+        assertEquals(1, b1.getCell(3,3).getVal());
     }
 
     @Test
