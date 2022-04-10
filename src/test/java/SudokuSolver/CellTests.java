@@ -9,15 +9,15 @@ public class CellTests {
     // isValidVal method tests
     @Test
     void isValidValTests(){
-        // these should return false: i < 1 or i > 9 for int i;
+        // these should return false: i < 0 or i > 9 for int i;
         assertFalse(Cell.isValidVal(-100));
         assertFalse(Cell.isValidVal(-1));
-        assertFalse(Cell.isValidVal(0));
         assertFalse(Cell.isValidVal(10));
         assertFalse(Cell.isValidVal(11));
         assertFalse(Cell.isValidVal(100));
 
-        // these should return true: i > 0 and i < 10 for int i;
+        // these should return true: i > -1 and i < 10 for int i;
+        assertTrue(Cell.isValidVal(0));
         assertTrue(Cell.isValidVal(1));
         assertTrue(Cell.isValidVal(2));
         assertTrue(Cell.isValidVal(5));
@@ -67,7 +67,7 @@ public class CellTests {
     void constructorTests(){
         int[] s1, s2;
         s1 = new int[]{-100, -1, 0, 10, 11, 100};
-        s2 = new int[]{1, 2, 5, 8, 9};
+        s2 = new int[]{0, 1, 5, 8, 9};
 
         // constructor tests
         assertThrows(IllegalArgumentException.class, ()-> new Cell(s1[0],s2[0],s2[0]));
@@ -113,7 +113,6 @@ public class CellTests {
         // mutator tests
         assertThrows(IllegalArgumentException.class, ()-> c1.setVal(s1[0]));
         assertThrows(IllegalArgumentException.class, ()-> c1.setVal(s1[1]));
-        assertThrows(IllegalArgumentException.class, ()-> c1.setVal(s1[2]));
         assertThrows(IllegalArgumentException.class, ()-> c1.setVal(s1[3]));
         assertThrows(IllegalArgumentException.class, ()-> c1.setVal(s1[4]));
         assertThrows(IllegalArgumentException.class, ()-> c1.setVal(s1[5]));
