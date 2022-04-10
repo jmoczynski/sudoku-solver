@@ -112,6 +112,8 @@ public class BoxTests {
                 new Cell(1, 3, 3)
         };
         Box b = new Box(a8);
+        assertArrayEquals(a8, b.getCells());
+        assertFalse(b.getComplete());
     }
 
     @Test
@@ -132,7 +134,32 @@ public class BoxTests {
     // checkComplete method tests
     void checkCompleteTests(){
         // TODO: implement tests
-        assertTrue(false);
+        Cell[] a1 = new Cell[]{
+                new Cell(1, 1, 1),
+                new Cell(1, 1, 2),
+                new Cell(1, 1, 3),
+                new Cell(1, 2, 1),
+                new Cell(1, 2, 2),
+                new Cell(1, 2, 3),
+                new Cell(1, 3, 1),
+                new Cell(1, 3, 2),
+                new Cell(1, 3, 3)
+        };
+        Box b1 = new Box(a1);
+        assertFalse(b1.getComplete());
+        Cell[] a2 = new Cell[]{
+                new Cell(1, 1, 1),
+                new Cell(2, 1, 2),
+                new Cell(3, 1, 3),
+                new Cell(4, 2, 1),
+                new Cell(5, 2, 2),
+                new Cell(6, 2, 3),
+                new Cell(7, 3, 1),
+                new Cell(8, 3, 2),
+                new Cell(9, 3, 3)
+        };
+        Box b2 = new Box(a2);
+        assertTrue(b2.getComplete());
     }
 
 }
