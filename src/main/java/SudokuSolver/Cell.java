@@ -40,7 +40,7 @@ public class Cell {
      */
     public Cell(int v, int r, int c){
         this.setVal(v);
-        this.setRow(c);
+        this.setRow(r);
         this.setCol(c);
     }
 
@@ -74,7 +74,8 @@ public class Cell {
      * @throws IllegalArgumentException if desired value is invalid
      */
     public void setVal(int i) {
-        // TODO: implement mutator
+        if(!isValidVal(i)) throw new IllegalArgumentException("value not valid");
+        this.val = i;
     }
 
     /**
@@ -83,7 +84,8 @@ public class Cell {
      * @throws IllegalArgumentException if desired row is invalid
      */
     public void setRow(int i) {
-        // TODO: implement mutator
+        if(!isValidRow(i)) throw new IllegalArgumentException("row not valid");
+        this.row = i;
     }
 
     /**
@@ -92,6 +94,7 @@ public class Cell {
      * @throws IllegalArgumentException if desired column is invalid
      */
     public void setCol(int i) {
-        // TODO: implement mutator
+        if(!isValidCol(i)) throw new IllegalArgumentException("column not valid");
+        this.col = i;
     }
 }

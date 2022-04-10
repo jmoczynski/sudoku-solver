@@ -84,19 +84,19 @@ public class CellTests {
         assertThrows(IllegalArgumentException.class, ()-> new Cell(s1[2],s2[0],s2[2]));
         assertThrows(IllegalArgumentException.class, ()-> new Cell(s1[3],s2[1],s2[3]));
         assertThrows(IllegalArgumentException.class, ()-> new Cell(s1[4],s2[1],s2[4]));
-        assertThrows(IllegalArgumentException.class, ()-> new Cell(s1[5],s2[1],s2[5]));
+        assertThrows(IllegalArgumentException.class, ()-> new Cell(s1[5],s2[1],s2[0]));
         assertThrows(IllegalArgumentException.class, ()-> new Cell(s2[0],s1[0],s2[0]));
         assertThrows(IllegalArgumentException.class, ()-> new Cell(s2[1],s1[1],s2[0]));
         assertThrows(IllegalArgumentException.class, ()-> new Cell(s2[2],s1[2],s2[0]));
         assertThrows(IllegalArgumentException.class, ()-> new Cell(s2[3],s1[3],s2[1]));
         assertThrows(IllegalArgumentException.class, ()-> new Cell(s2[4],s1[4],s2[1]));
-        assertThrows(IllegalArgumentException.class, ()-> new Cell(s2[5],s1[5],s2[1]));
+        assertThrows(IllegalArgumentException.class, ()-> new Cell(s2[0],s1[5],s2[1]));
         assertThrows(IllegalArgumentException.class, ()-> new Cell(s2[0],s2[0],s1[0]));
         assertThrows(IllegalArgumentException.class, ()-> new Cell(s2[0],s2[1],s1[1]));
         assertThrows(IllegalArgumentException.class, ()-> new Cell(s2[0],s2[2],s1[2]));
         assertThrows(IllegalArgumentException.class, ()-> new Cell(s2[1],s2[3],s1[3]));
         assertThrows(IllegalArgumentException.class, ()-> new Cell(s2[1],s2[4],s1[4]));
-        assertThrows(IllegalArgumentException.class, ()-> new Cell(s2[1],s2[5],s1[5]));
+        assertThrows(IllegalArgumentException.class, ()-> new Cell(s2[1],s2[0],s1[5]));
 
         Cell c1, c2, c3;
         c1 = new Cell(1, 1, 1);
