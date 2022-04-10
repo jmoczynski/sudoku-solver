@@ -12,7 +12,6 @@ public class BoxTests {
     @Test
     // isValidCellArray method tests
     void isValidCellArrayTests(){
-        // TODO: implement tests
         Cell[] a1, a2, a3, a4, a5, a6, a7, a8;
         a1 = new Cell[]{};
         assertFalse(Box.isValidCellArray(a1));
