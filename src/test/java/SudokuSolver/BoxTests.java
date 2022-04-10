@@ -221,7 +221,6 @@ public class BoxTests {
     @Test
     // getColNums method tests
     void getColNumsTests(){
-        // TODO: implement
         Box b1, b2;
         Cell[] a1 = new Cell[]{
                 new Cell(1, 1, 1),
@@ -254,7 +253,6 @@ public class BoxTests {
     @Test
     // getRowNums method tests
     void getRowNumsTests(){
-        // TODO: implement
         Box b1, b2;
         Cell[] a1 = new Cell[]{
                 new Cell(1, 1, 1),
