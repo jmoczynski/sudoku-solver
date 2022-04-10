@@ -77,7 +77,8 @@ public class Box {
     }
 
     /**
-     * checks if Box is complete and mutates complete property
+     * checks if Box is complete and mutates complete property:
+     * - box has 9 unique values
      * @return Box complete property
      */
     public boolean checkComplete(){
