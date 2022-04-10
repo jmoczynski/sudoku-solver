@@ -218,4 +218,16 @@ public class BoxTests {
         assertTrue(b2.getComplete());
     }
 
+    @Test
+    // getColNums method tests
+    void getColNumsTests(){
+        // TODO: implement
+    }
+
+    @Test
+    // getRowNums method tests
+    void getRowNumsTests(){
+        // TODO: implement
+    }
+
 }
