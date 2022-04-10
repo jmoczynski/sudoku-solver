@@ -49,8 +49,7 @@ public class Cell {
      * @return the cell value
      */
     public int getVal() {
-        // TODO: implement accessor
-        return 0;
+        return this.val;
     }
 
     /**
@@ -58,8 +57,7 @@ public class Cell {
      * @return the cell value
      */
     public int getRow() {
-        // TODO: implement accessor
-        return 0;
+        return this.row;
     }
 
     /**
@@ -67,8 +65,7 @@ public class Cell {
      * @return the cell value
      */
     public int getCol() {
-        // TODO: implement accessor
-        return 0;
+        return this.col;
     }
 
     /**
