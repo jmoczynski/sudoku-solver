@@ -140,7 +140,14 @@ public class Box {
      */
     public int[] getColNums(){
         // TODO: implement
-        return null;
+        Iterator<Cell> cellIter = Arrays.stream(this.getCells()).iterator();
+        Set<Integer> cellCSet = new HashSet<>();
+        while(cellIter.hasNext()) cellCSet.add(cellIter.next().getCol());
+        Integer[] colsSetArr = new Integer[cellCSet.size()];
+        cellCSet.toArray(colsSetArr);
+        int[] cols = new int[cellCSet.size()];
+        for(int i = 0; i < cellCSet.size(); i++) cols[i] = colsSetArr[i];
+        return cols;
     }
 
     /**

@@ -235,7 +235,7 @@ public class BoxTests {
                 new Cell(1, 3, 3)
         };
         b1 = new Box(a1);
-        assertEquals(new int[]{1, 2, 3}, b1.getColNums());
+        assertArrayEquals(new int[]{1, 2, 3}, b1.getColNums());
         Cell[] a2 = new Cell[]{
                 new Cell(1, 1, 7),
                 new Cell(2, 1, 8),
@@ -248,7 +248,7 @@ public class BoxTests {
                 new Cell(9, 3, 9)
         };
         b2 = new Box(a2);
-        assertEquals(new int[]{7, 8, 9}, b2.getColNums());
+        assertArrayEquals(new int[]{7, 8, 9}, b2.getColNums());
     }
 
     @Test
@@ -268,7 +268,7 @@ public class BoxTests {
                 new Cell(1, 3, 3)
         };
         b1 = new Box(a1);
-        assertEquals(new int[]{1, 2, 3}, b1.getRowNums());
+        assertArrayEquals(new int[]{1, 2, 3}, b1.getRowNums());
         Cell[] a2 = new Cell[]{
                 new Cell(1, 4, 1),
                 new Cell(2, 4, 2),
@@ -281,7 +281,7 @@ public class BoxTests {
                 new Cell(9, 6, 3)
         };
         b2 = new Box(a2);
-        assertEquals(new int[]{4, 5, 6}, b2.getRowNums());
+        assertArrayEquals(new int[]{4, 5, 6}, b2.getRowNums());
     }
 
 }
