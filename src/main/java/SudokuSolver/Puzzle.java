@@ -89,4 +89,28 @@ public class Puzzle {
         this.boxes = boxes;
     }
 
+    /**
+     * accessor for Puzzle completeness property
+     * @return true if Puzzle is complete, false otherwise
+     */
+    public boolean isComplete(){
+        // TODO: implement
+        return false;
+    }
+
+    /**
+     * mutator for Puzzle completeness property
+     * @param isComplete whether Puzzle is complete or not
+     */
+    private void setComplete(boolean isComplete){
+        // TODO: implement
+    }
+
+    /**
+     * checks if Puzzle is complete and updates Puzzle completeness property accordingly
+     */
+    public void checkComplete(){
+        // TODO: implement
+    }
+
 }
