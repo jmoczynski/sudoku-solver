@@ -78,9 +78,9 @@ public class Puzzle {
      * @param num the number of the Box to get
      * @return the Box corresponding to the number
      * @throws IllegalArgumentException if num not > 0 or < 10
+     * @throws NullPointerException if Box not found in Puzzle
      */
     public Box getBox(int num){
-        // TODO: implement
         if(num < 1 || num > 9) throw new IllegalArgumentException("invalid Box number");
         int[] rowSearch = new int[3], colSearch = new int[3];
         switch(num){
@@ -121,8 +121,12 @@ public class Puzzle {
                 colSearch = new int[]{7,8,9};
                 break;
         }
+        for(Box b : this.getBoxes()){
+            int[] r = b.getRowNums(), c = b.getColNums();
+            if(Arrays.equals(r, rowSearch) && Arrays.equals(c, colSearch)) return b;
+        }
 
-        return null;
+        throw new NullPointerException("error");
     }
 
     public Cell getCell(int r, int c){

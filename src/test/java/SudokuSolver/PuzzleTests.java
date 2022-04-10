@@ -375,7 +375,7 @@ public class PuzzleTests {
         bc8 = new Box(cells8);
         bc9 = new Box(cells9);
         Puzzle p1 = new Puzzle(new Box[]{bc1, bc2, bc3, bc4, bc5, bc6, bc7, bc8, bc9});
-        assertThrows(IllegalArgumentException.class, ()-> p1.getBox(1));
+        assertThrows(IllegalArgumentException.class, ()-> p1.getBox(0));
         assertThrows(IllegalArgumentException.class, ()-> p1.getBox(10));
         assertEquals(bc1, p1.getBox(1));
         assertEquals(bc2, p1.getBox(2));
@@ -383,8 +383,8 @@ public class PuzzleTests {
         assertEquals(bc4, p1.getBox(4));
         assertEquals(bc5, p1.getBox(6));
         assertEquals(bc6, p1.getBox(5));
-        assertEquals(bc7, p1.getBox(7));
-        assertEquals(bc8, p1.getBox(8));
-        assertEquals(bc9, p1.getBox(9));
+        assertEquals(bc7, p1.getBox(8));
+        assertEquals(bc8, p1.getBox(9));
+        assertEquals(bc9, p1.getBox(7));
     }
 }
