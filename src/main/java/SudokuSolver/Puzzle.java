@@ -135,8 +135,10 @@ public class Puzzle {
      * @return array of values in Puzzle column
      */
     public int[] getColVals(int num){
-        // TODO: implement
-        return null;
+        Cell[] cellArr = this.getCol(num);
+        int[] valArr = new int[cellArr.length];
+        for(int i = 0; i < cellArr.length; i++) valArr[i] = cellArr[i].getVal();
+        return valArr;
     }
 
     /**
@@ -147,8 +149,16 @@ public class Puzzle {
      * @return array of Cells in Puzzle column
      */
     private Cell[] getCol(int num){
-        // TODO: implement
-        return null;
+        if(num < 1 || num > 9) throw new IllegalArgumentException("invalid column number");
+        List<Cell> cells = new ArrayList<>();
+        List<Cell> cellsOut = new ArrayList<>();
+        for(Box b : this.getBoxes()){
+            for(Cell c : b.getCells()) cells.add(c);
+        }
+        for(Cell c : cells){
+            if(c.getCol() == num) cellsOut.add(c);
+        }
+        return cellsOut.toArray(new Cell[0]);
     }
 
     /**
@@ -159,8 +169,10 @@ public class Puzzle {
      * @return array of values in Puzzle row
      */
     public int[] getRowVals(int num){
-        // TODO: implement
-        return null;
+        Cell[] cellArr = this.getRow(num);
+        int[] valArr = new int[cellArr.length];
+        for(int i = 0; i < cellArr.length; i++) valArr[i] = cellArr[i].getVal();
+        return valArr;
     }
 
     /**
@@ -171,8 +183,16 @@ public class Puzzle {
      * @return array of Cells in Puzzle row
      */
     private Cell[] getRow(int num){
-        // TODO: implement
-        return null;
+        if(num < 1 || num > 9) throw new IllegalArgumentException("invalid row number");
+        List<Cell> cells = new ArrayList<>();
+        List<Cell> cellsOut = new ArrayList<>();
+        for(Box b : this.getBoxes()){
+            for(Cell c : b.getCells()) cells.add(c);
+        }
+        for(Cell c : cells){
+            if(c.getRow() == num) cellsOut.add(c);
+        }
+        return cellsOut.toArray(new Cell[0]);
     }
 
     public Cell getCell(int r, int c){
