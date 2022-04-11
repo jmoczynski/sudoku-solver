@@ -64,7 +64,6 @@ public class BoxTests {
     @Test
     // constructor, accessor, and mutator method tests
     void constructorTests(){
-        // TODO: implement tests
         Cell[] a1, a2, a3, a4, a5, a6, a7, a8;
         a1 = new Cell[]{};
         assertThrows(IllegalArgumentException.class, ()-> new Box(a1));
@@ -216,6 +215,70 @@ public class BoxTests {
         };
         Box b2 = new Box(a2);
         assertTrue(b2.getComplete());
+    }
+
+    @Test
+    // getColNums method tests
+    void getColNumsTests(){
+        Box b1, b2;
+        Cell[] a1 = new Cell[]{
+                new Cell(1, 1, 1),
+                new Cell(1, 1, 2),
+                new Cell(1, 1, 3),
+                new Cell(1, 2, 1),
+                new Cell(1, 2, 2),
+                new Cell(1, 2, 3),
+                new Cell(1, 3, 1),
+                new Cell(1, 3, 2),
+                new Cell(1, 3, 3)
+        };
+        b1 = new Box(a1);
+        assertArrayEquals(new int[]{1, 2, 3}, b1.getColNums());
+        Cell[] a2 = new Cell[]{
+                new Cell(1, 1, 7),
+                new Cell(2, 1, 8),
+                new Cell(3, 1, 9),
+                new Cell(4, 2, 7),
+                new Cell(5, 2, 8),
+                new Cell(6, 2, 9),
+                new Cell(7, 3, 7),
+                new Cell(8, 3, 8),
+                new Cell(9, 3, 9)
+        };
+        b2 = new Box(a2);
+        assertArrayEquals(new int[]{7, 8, 9}, b2.getColNums());
+    }
+
+    @Test
+    // getRowNums method tests
+    void getRowNumsTests(){
+        Box b1, b2;
+        Cell[] a1 = new Cell[]{
+                new Cell(1, 1, 1),
+                new Cell(1, 1, 2),
+                new Cell(1, 1, 3),
+                new Cell(1, 2, 1),
+                new Cell(1, 2, 2),
+                new Cell(1, 2, 3),
+                new Cell(1, 3, 1),
+                new Cell(1, 3, 2),
+                new Cell(1, 3, 3)
+        };
+        b1 = new Box(a1);
+        assertArrayEquals(new int[]{1, 2, 3}, b1.getRowNums());
+        Cell[] a2 = new Cell[]{
+                new Cell(1, 4, 1),
+                new Cell(2, 4, 2),
+                new Cell(3, 4, 3),
+                new Cell(4, 5, 1),
+                new Cell(5, 5, 2),
+                new Cell(6, 5, 3),
+                new Cell(7, 6, 1),
+                new Cell(8, 6, 2),
+                new Cell(9, 6, 3)
+        };
+        b2 = new Box(a2);
+        assertArrayEquals(new int[]{4, 5, 6}, b2.getRowNums());
     }
 
 }

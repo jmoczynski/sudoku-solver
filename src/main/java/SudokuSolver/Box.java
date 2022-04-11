@@ -133,4 +133,36 @@ public class Box {
         }else this.setComplete(true);
         return this.getComplete();
     }
+
+    /**
+     * Get the Box column numbers
+     * @return the numbers of the columns in the Box
+     */
+    public int[] getColNums(){
+        Iterator<Cell> cellIter = Arrays.stream(this.getCells()).iterator();
+        Set<Integer> cellCSet = new HashSet<>();
+        while(cellIter.hasNext()) cellCSet.add(cellIter.next().getCol());
+        Integer[] colsSetArr = new Integer[cellCSet.size()];
+        cellCSet.toArray(colsSetArr);
+        int[] cols = new int[cellCSet.size()];
+        for(int i = 0; i < cellCSet.size(); i++) cols[i] = colsSetArr[i];
+        return cols;
+    }
+
+    /**
+     * Get the Box row numbers
+     * @return the numbers of the columns in the Box
+     */
+    public int[] getRowNums(){
+        Iterator<Cell> cellIterator = Arrays.stream(this.getCells()).iterator();
+        Set<Integer> cellRSet = new HashSet<>();
+        while(cellIterator.hasNext()) cellRSet.add(cellIterator.next().getRow());
+        Integer[] rowsSetArr = new Integer[cellRSet.size()];
+        cellRSet.toArray(rowsSetArr);
+        int[] rows = new int[cellRSet.size()];
+        for(int i = 0; i < cellRSet.size(); i++) rows[i] = rowsSetArr[i];
+        return rows;
+    }
+
+
 }
