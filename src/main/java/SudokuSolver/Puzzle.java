@@ -195,13 +195,37 @@ public class Puzzle {
         return cellsOut.toArray(new Cell[0]);
     }
 
+    /**
+     * Get Cell at specified row and column
+     * @param r desired row
+     * @param c desired column
+     * @return Cell at (r, c) in Puzzle
+     * @throws IllegalArgumentException if desired row or column are invalid
+     * @throws NullPointerException if desired Cell not found
+     */
     public Cell getCell(int r, int c){
-        // TODO: implement
-        return null;
+
+        if(!Cell.isValidRow(r) || !Cell.isValidCol(c)) throw new IllegalArgumentException("row or column not valid");
+        Cell[] row = this.getRow(r);
+        for(Cell cell : row){
+            if(cell.getCol() == c) return cell;
+        }
+
+        throw new NullPointerException("Cell not found in Puzzle");
+
     }
 
+    /**
+     * Get Cell at specified row and column
+     * @param r desired row
+     * @param c desired column
+     * @return Cell at (r, c) in Puzzle
+     * @throws IllegalArgumentException if desired row or column are invalid
+     * @throws NullPointerException if desired Cell not found
+     */
     public void setCell(int r, int c, int v){
-        // TODO: implement
+        if(this.getCell(r,c) == null) throw new NullPointerException("Cell not found in Puzzle");
+        this.getCell(r,c).setVal(v);
     }
 
     /**
@@ -237,5 +261,23 @@ public class Puzzle {
     public void checkComplete(){
         // TODO: implement
     }
+
+    /**
+     * sets the values in a desired row
+     * @param r desired row
+     * @param vals desired values
+     * @throws IllegalArgumentException if any arguments are invalid
+     * @throws NullPointerException if row cannot be found
+     */
+    public void setRow(int r, int[] vals){//TODO: implement}
+
+    /**
+     * sets the values in a desired column
+     * @param c desired column
+     * @param cols desired values
+     * @throws IllegalArgumentException if any arguments are invalid
+     * @throws NullPointerException if column cannot be found
+     */
+    public void setCol(int c, int[] cols){//TODO: implement}
 
 }
