@@ -751,15 +751,15 @@ public class PuzzleTests {
         bc9 = new Box(cells9);
         Puzzle p1 = new Puzzle(new Box[]{bc1, bc2, bc3, bc4, bc5, bc6, bc7, bc8, bc9});
         assertThrows(IllegalArgumentException.class, ()-> p1.getCell(-1, 10));
-        assertEquals(1,p1.getCell(1,1).getVal());
-        assertEquals(2,p1.getCell(2,2).getVal());
-        assertEquals(3,p1.getCell(3,3).getVal());
-        assertEquals(4,p1.getCell(4,4).getVal());
-        assertEquals(5,p1.getCell(5,5).getVal());
-        assertEquals(6,p1.getCell(6,6).getVal());
-        assertEquals(7,p1.getCell(7,7).getVal());
-        assertEquals(8,p1.getCell(8,8).getVal());
-        assertEquals(9,p1.getCell(9,9).getVal());
+        assertEquals(0,p1.getCell(1,1).getVal());
+        assertEquals(0,p1.getCell(2,2).getVal());
+        assertEquals(0,p1.getCell(3,3).getVal());
+        assertEquals(0,p1.getCell(4,4).getVal());
+        assertEquals(0,p1.getCell(5,5).getVal());
+        assertEquals(0,p1.getCell(6,6).getVal());
+        assertEquals(0,p1.getCell(7,7).getVal());
+        assertEquals(0,p1.getCell(8,8).getVal());
+        assertEquals(0,p1.getCell(9,9).getVal());
     }
 
     @Test
