@@ -1018,4 +1018,12 @@ public class PuzzleTests {
 
     }
 
+    @Test
+    // setRow method tests
+    void setRowTests(){fail();}
+
+    @Test
+    // setCol method tests
+    void setColTests(){fail();}
+
 }

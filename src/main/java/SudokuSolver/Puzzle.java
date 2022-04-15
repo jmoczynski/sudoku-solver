@@ -262,4 +262,22 @@ public class Puzzle {
         // TODO: implement
     }
 
+    /**
+     * sets the values in a desired row
+     * @param r desired row
+     * @param vals desired values
+     * @throws IllegalArgumentException if any arguments are invalid
+     * @throws NullPointerException if row cannot be found
+     */
+    public void setRow(int r, int[] vals){}
+
+    /**
+     * sets the values in a desired column
+     * @param c desired column
+     * @param cols desired values
+     * @throws IllegalArgumentException if any arguments are invalid
+     * @throws NullPointerException if column cannot be found
+     */
+    public void setCol(int c, int[] cols){}
+
 }
