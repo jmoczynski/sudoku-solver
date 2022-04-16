@@ -278,7 +278,7 @@ public class Puzzle {
     /**
      * sets the values in a desired column
      * @param c desired column
-     * @param cols desired values
+     * @param vals desired values
      * @throws IllegalArgumentException if any arguments are invalid
      * @throws NullPointerException if column cannot be found
      */
