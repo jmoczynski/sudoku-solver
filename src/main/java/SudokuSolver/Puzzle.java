@@ -253,6 +253,7 @@ public class Puzzle {
      */
     private void setComplete(boolean isComplete){
         // TODO: implement
+        this.isComplete = isComplete;
     }
 
     /**
@@ -260,6 +261,20 @@ public class Puzzle {
      */
     public void checkComplete(){
         // TODO: implement
+        final int MAX_VAL = 9;
+        int[] vals;
+        Iterator<Integer> valsIter;
+        Set<Integer> valSet;
+        for(int i = 1; i <= MAX_VAL; i++){
+            vals = this.getRowVals(i);
+            valsIter = Arrays.stream(vals).iterator();
+            valSet = new HashSet<>();
+            while(valsIter.hasNext()){
+                valSet.add(valsIter.next());
+            };
+            if(valSet.size() != MAX_VAL) this.setComplete(false);
+        }
+        this.setComplete(true);
     }
 
     /**
