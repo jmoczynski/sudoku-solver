@@ -270,7 +270,6 @@ public class Puzzle {
      * @throws NullPointerException if row cannot be found
      */
     public void setRow(int r, int[] vals) {
-        //TODO: implement
         Cell[] cRow = this.getRow(r);
         if(cRow.length != vals.length) throw new IllegalArgumentException("desired size of values not the same as number of values in row");
         for(int i = 0; i < cRow.length; i++) cRow[i].setVal(vals[i]);
@@ -283,8 +282,10 @@ public class Puzzle {
      * @throws IllegalArgumentException if any arguments are invalid
      * @throws NullPointerException if column cannot be found
      */
-    public void setCol(int c, int[] cols){
-        //TODO: implement
+    public void setCol(int c, int[] vals){
+        Cell[] cCol = this.getCol(c);
+        if(cCol.length != vals.length) throw new IllegalArgumentException("desired size of values not the same as number of values in Col");
+        for(int i = 0; i < cCol.length; i++) cCol[i].setVal(vals[i]);
     }
 
 }

@@ -1021,7 +1021,6 @@ public class PuzzleTests {
     @Test
     // setRow method tests
     void setRowTests(){
-        //TODO: implement
         Cell[] cells1, cells2, cells3, cells4, cells5, cells6, cells7, cells8, cells9;
         cells1 = new Cell[]{
                 new Cell(0,1,1),
@@ -1140,7 +1139,6 @@ public class PuzzleTests {
     @Test
     // setCol method tests
     void setColTests(){
-        //TODO: implement
         Cell[] cells1, cells2, cells3, cells4, cells5, cells6, cells7, cells8, cells9;
         cells1 = new Cell[]{
                 new Cell(0,1,1),
