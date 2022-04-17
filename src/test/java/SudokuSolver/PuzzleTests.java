@@ -372,7 +372,7 @@ public class PuzzleTests {
         bc7 = new Box(cells7);
         bc8 = new Box(cells8);
         bc9 = new Box(cells9);
-        Puzzle p1 = new Puzzle(new Box[]{bc1, bc2, bc3, bc4, bc5, bc6, bc7, bc8, bc9});
+        Puzzle p1 = new Puzzle(new Box[]{bc1, bc2, bc3, bc4, bc5, bc6,  bc9, bc7, bc8});
         assertThrows(IllegalArgumentException.class, ()-> p1.getBox(0));
         assertThrows(IllegalArgumentException.class, ()-> p1.getBox(10));
         assertEquals(bc1, p1.getBox(1));
@@ -499,7 +499,7 @@ public class PuzzleTests {
         bc7 = new Box(cells7);
         bc8 = new Box(cells8);
         bc9 = new Box(cells9);
-        Puzzle p1 = new Puzzle(new Box[]{bc1, bc2, bc3, bc4, bc5, bc6, bc7, bc8, bc9});
+        Puzzle p1 = new Puzzle(new Box[]{bc1, bc2, bc3, bc4, bc5, bc6,  bc9, bc7, bc8});
         assertArrayEquals(new int[]{0,0,0,0,0,0,0,0,0}, p1.getColVals(1));
         assertArrayEquals(new int[]{0,0,0,0,0,0,0,0,0}, p1.getColVals(2));
         assertArrayEquals(new int[]{0,0,0,0,0,0,0,0,0}, p1.getColVals(3));
@@ -624,7 +624,7 @@ public class PuzzleTests {
         bc7 = new Box(cells7);
         bc8 = new Box(cells8);
         bc9 = new Box(cells9);
-        Puzzle p1 = new Puzzle(new Box[]{bc1, bc2, bc3, bc4, bc5, bc6, bc7, bc8, bc9});
+        Puzzle p1 = new Puzzle(new Box[]{bc1, bc2, bc3, bc4, bc5, bc6,  bc9, bc7, bc8});
         assertArrayEquals(new int[]{0,0,0,0,0,0,0,0,0}, p1.getRowVals(1));
         assertArrayEquals(new int[]{0,0,0,0,0,0,0,0,0}, p1.getRowVals(2));
         assertArrayEquals(new int[]{0,0,0,0,0,0,0,0,0}, p1.getRowVals(3));
@@ -749,7 +749,7 @@ public class PuzzleTests {
         bc7 = new Box(cells7);
         bc8 = new Box(cells8);
         bc9 = new Box(cells9);
-        Puzzle p1 = new Puzzle(new Box[]{bc1, bc2, bc3, bc4, bc5, bc6, bc7, bc8, bc9});
+        Puzzle p1 = new Puzzle(new Box[]{bc1, bc2, bc3, bc4, bc5, bc6,  bc9, bc7, bc8});
         assertThrows(IllegalArgumentException.class, ()-> p1.getCell(-1, 10));
         assertEquals(0,p1.getCell(1,1).getVal());
         assertEquals(0,p1.getCell(2,2).getVal());
@@ -875,7 +875,7 @@ public class PuzzleTests {
         bc7 = new Box(cells7);
         bc8 = new Box(cells8);
         bc9 = new Box(cells9);
-        Puzzle p1 = new Puzzle(new Box[]{bc1, bc2, bc3, bc4, bc5, bc6, bc7, bc8, bc9});
+        Puzzle p1 = new Puzzle(new Box[]{bc1, bc2, bc3, bc4, bc5, bc6,  bc9, bc7, bc8});
         p1.setCell(1,1,1);
         assertEquals(1, p1.getCell(1,1).getVal());
         p1.setCell(2,2,2);
@@ -1012,10 +1012,42 @@ public class PuzzleTests {
         bc7 = new Box(cells7);
         bc8 = new Box(cells8);
         bc9 = new Box(cells9);
-        Puzzle p1 = new Puzzle(new Box[]{bc1, bc2, bc3, bc4, bc5, bc6, bc7, bc8, bc9});
+        Puzzle p1 = new Puzzle(new Box[]{bc1, bc2, bc3, bc4, bc5, bc6, bc9, bc7, bc8});
         p1.checkComplete();
         assertFalse(p1.isComplete());
-
+        p1.setRow(1, new int[]{1,2,3,4,5,6,7,8,9});
+        p1.setRow(2, new int[]{1,2,3,4,5,6,7,8,9});
+        p1.setRow(3, new int[]{1,2,3,4,5,6,7,8,9});
+        p1.setRow(4, new int[]{1,2,3,4,5,6,7,8,9});
+        p1.setRow(5, new int[]{1,2,3,4,5,6,7,8,9});
+        p1.setRow(6, new int[]{1,2,3,4,5,6,7,8,9});
+        p1.setRow(7, new int[]{1,2,3,4,5,6,7,8,9});
+        p1.setRow(8, new int[]{1,2,3,4,5,6,7,8,9});
+        p1.setRow(9, new int[]{1,2,3,4,5,6,7,8,9});
+        p1.checkComplete();
+        assertFalse(p1.isComplete());
+        p1.setCol(1, new int[]{1,2,3,4,5,6,7,8,9});
+        p1.setCol(2, new int[]{1,2,3,4,5,6,7,8,9});
+        p1.setCol(3, new int[]{1,2,3,4,5,6,7,8,9});
+        p1.setCol(4, new int[]{1,2,3,4,5,6,7,8,9});
+        p1.setCol(5, new int[]{1,2,3,4,5,6,7,8,9});
+        p1.setCol(6, new int[]{1,2,3,4,5,6,7,8,9});
+        p1.setCol(7, new int[]{1,2,3,4,5,6,7,8,9});
+        p1.setCol(8, new int[]{1,2,3,4,5,6,7,8,9});
+        p1.setCol(9, new int[]{1,2,3,4,5,6,7,8,9});
+        p1.checkComplete();
+        assertFalse(p1.isComplete());
+        p1.setRow(1, new int[]{2,3,7,5,9,8,6,4,1});
+        p1.setRow(2, new int[]{8,4,5,1,7,6,9,3,2});
+        p1.setRow(3, new int[]{1,6,9,3,4,2,5,8,7});
+        p1.setRow(4, new int[]{6,9,2,4,1,3,8,7,5});
+        p1.setRow(5, new int[]{5,7,4,8,6,9,1,2,3});
+        p1.setRow(6, new int[]{3,8,1,7,2,5,4,9,6});
+        p1.setRow(7, new int[]{7,5,6,9,3,4,2,1,8});
+        p1.setRow(8, new int[]{9,1,8,2,5,7,3,6,4});
+        p1.setRow(9, new int[]{4,2,3,6,8,1,7,5,9});
+        p1.checkComplete();
+        assertFalse(p1.isComplete());
     }
 
     @Test
@@ -1131,7 +1163,7 @@ public class PuzzleTests {
         bc7 = new Box(cells7);
         bc8 = new Box(cells8);
         bc9 = new Box(cells9);
-        Puzzle p1 = new Puzzle(new Box[]{bc1, bc2, bc3, bc4, bc5, bc6, bc7, bc8, bc9});
+        Puzzle p1 = new Puzzle(new Box[]{bc1, bc2, bc3, bc4, bc5, bc6,  bc9, bc7, bc8});
         p1.setRow(1, new int[]{1,2,3,4,5,6,7,8,9});
         assertArrayEquals(new int[]{1,2,3,4,5,6,7,8,9}, p1.getRowVals(1));
     }
@@ -1249,7 +1281,7 @@ public class PuzzleTests {
         bc7 = new Box(cells7);
         bc8 = new Box(cells8);
         bc9 = new Box(cells9);
-        Puzzle p1 = new Puzzle(new Box[]{bc1, bc2, bc3, bc4, bc5, bc6, bc7, bc8, bc9});
+        Puzzle p1 = new Puzzle(new Box[]{bc1, bc2, bc3, bc4, bc5, bc6,  bc9, bc7, bc8});
         p1.setCol(1, new int[]{1,2,3,4,5,6,7,8,9});
         assertArrayEquals(new int[]{1,2,3,4,5,6,7,8,9}, p1.getColVals(1));
     }

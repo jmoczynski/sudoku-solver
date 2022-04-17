@@ -7,6 +7,8 @@ public class Puzzle {
     private Box[] boxes;
     private boolean isComplete;
 
+    private final int MAX_VAL = 9;
+
     /**
      * Checks if Box array is valid:
      * - exactly 9 Box objects
@@ -47,11 +49,21 @@ public class Puzzle {
 
     /**
      * constructor method for Puzzle
-     * @param boxes desired Box array to make Puzzle
+     * @param boxes desired Box array to make Puzzle, must be entered in this order
+     * - box 1: rows 1,2,3 intersect cols 1,2,3
+     * - box 2: rows 1,2,3 intersect cols 4,5,6
+     * - box 3: rows 1,2,3 intersect cols 7,8,9
+     * - box 4: rows 4,5,6 intersect cols 1,2,3
+     * - box 5: rows 4,5,6 intersect cols 4,5,6
+     * - box 6: rows 4,5,6 intersect cols 7,8,9
+     * - box 7: rows 7,8,9 intersect cols 1,2,3
+     * - box 8: rows 7,8,9 intersect cols 4,5,6
+     * - box 9: rows 7,8,9 intersect cols 7,8,9
      * @throws IllegalArgumentException if Box array invalid
      */
     public Puzzle(Box[] boxes){
         this.setBoxes(boxes);
+        this.checkComplete();
     }
 
     /**
@@ -243,8 +255,7 @@ public class Puzzle {
      * @return true if Puzzle is complete, false otherwise
      */
     public boolean isComplete(){
-        // TODO: implement
-        return false;
+        return this.isComplete;
     }
 
     /**
@@ -252,7 +263,6 @@ public class Puzzle {
      * @param isComplete whether Puzzle is complete or not
      */
     private void setComplete(boolean isComplete){
-        // TODO: implement
         this.isComplete = isComplete;
     }
 
@@ -260,8 +270,13 @@ public class Puzzle {
      * checks if Puzzle is complete and updates Puzzle completeness property accordingly
      */
     public void checkComplete(){
-        // TODO: implement
-        final int MAX_VAL = 9;
+        this.checkRows();
+        this.checkCols();
+        this.checkBoxes();
+        this.setComplete(this.checkRows() && this.checkCols() && this.checkBoxes());
+    }
+
+    private boolean checkRows(){
         int[] vals;
         Iterator<Integer> valsIter;
         Set<Integer> valSet;
@@ -269,12 +284,43 @@ public class Puzzle {
             vals = this.getRowVals(i);
             valsIter = Arrays.stream(vals).iterator();
             valSet = new HashSet<>();
-            while(valsIter.hasNext()){
-                valSet.add(valsIter.next());
-            };
-            if(valSet.size() != MAX_VAL) this.setComplete(false);
+            while(valsIter.hasNext()) valSet.add(valsIter.next());
+            if(valSet.size() != MAX_VAL) return false;
         }
-        this.setComplete(true);
+        return true;
+    }
+
+    private boolean checkCols(){
+        int[] vals;
+        Iterator<Integer> valsIter;
+        Set<Integer> valSet;
+        for(int i = 1; i <= MAX_VAL; i++){
+            vals = this.getColVals(i);
+            valsIter = Arrays.stream(vals).iterator();
+            valSet = new HashSet<>();
+            while(valsIter.hasNext()) valSet.add(valsIter.next());
+            if(valSet.size() != MAX_VAL) return false;
+        }
+        return true;
+    }
+
+    private boolean checkBoxes(){
+        int[] vals;
+        Iterator<Cell> cellIter;
+        Iterator<Integer> valsIter;
+        Set<Integer> valSet;
+        for(Box b : this.getBoxes()){
+            cellIter = Arrays.stream(b.getCells()).iterator();
+            vals = new int[b.getCells().length];
+            for(int i = 0; i < vals.length; i++){
+                vals[i] = cellIter.next().getVal();
+            }
+            valSet = new HashSet<>();
+            valsIter = Arrays.stream(vals).iterator();
+            while(valsIter.hasNext()) valSet.add(valsIter.next());
+            if(valSet.size() != MAX_VAL) return false;
+        }
+        return true;
     }
 
     /**
